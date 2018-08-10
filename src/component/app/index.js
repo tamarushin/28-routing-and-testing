@@ -1,22 +1,24 @@
-"use strict";
+'use strict'
 
-import React from "../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react";
-import { BrowserRouter, Route, Link, NavLink } from "../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom";
-import Dashboard from "./Dashboard";
-import Landing from "./Landing";
-export default class App extends React.Component {
+import React from 'react'
+import { Fragment, Route } from 'react-router-dom'
+import Dashboard from '../dashboard/index'
+import Landing from '../landing/index'
+
+
+class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
-        <React.Fragment>
-          <nav>
-            <NavLink to="/">Landing</NavLink>
-            <NavLink to="/Dashboard">Dashboard</NavLink>
-          </nav>
-          <Route exact path="/" component={Landing} />
-          <Route path="/dashboard" component={Dashboard} />
-        </React.Fragment>
-      </BrowserRouter>
-    );
+      <div className='app'>
+        <Fragment>
+          <div>
+            <Route exact path='/' component={ Landing } />
+            <Route exact path='/dashboard' component={ Dashboard } />
+          </div>
+        </Fragment>
+      </div>
+    )
   }
 }
+
+export default App

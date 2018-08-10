@@ -4,7 +4,9 @@
   "description": "![cf](http://i.imgur.com/7v5ASc8.png) 28: To Do ===",
   "main": "webpack.common.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint **/*.js",
+    "watch": "webpack-dev-server"
   },
   "repository": {
     "type": "git",

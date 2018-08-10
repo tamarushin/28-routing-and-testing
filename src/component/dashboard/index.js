@@ -1,38 +1,39 @@
-"use strict";
+'use strict'
 
-import React, { Component, Fragment } from "react";
-import NoteCreateForm from "./NoteCreateForm";
-import NoteList from "./NoteList";
+import React, { Component, Fragment } from 'react'
+import NoteCreateForm from './note-create-form/index'
+import NoteList from './note-list/index'
 
-export default class Dashboard extends Component {
-  state = {
-    notes: []
-  };
-
+class Dashboard extends Component {
   constructor(props) {
-    super(props);
-    this.addNote = this.addNote.bind(this);
-    this.removeNote = this.removeNote.bind(this);
+    super(props)
+    this.state = {
+      notes: [],
+    }
+    this.addNote = this.addNote.bind(this)
+    this.removeNote = this.removeNote.bind(this) 
   }
 
   addNote(note) {
     this.setState({
-      notes: [...this.state.notes, note]
-    });
+      notes: [...this.state.notes, note],
+    })
   }
 
   removeNote(id) {
-    const notes = this.state.notes.filter(note => note.id !== id);
-    this.setState({ notes });
+    const notes = this.state.notes.filter(note => note.id !== id)
+    this.setState({ notes })
   }
 
   render() {
     return (
       <Fragment>
-        <h1>All Notes All the Time</h1>
+        <h1>Notes are not only for Music</h1>
         <NoteCreateForm onSubmit={this.addNote} />
         <NoteList notes={this.state.notes} onRemove={this.removeNote} />
       </Fragment>
-    );
+    )
   }
 }
+
+export default Dashboard
