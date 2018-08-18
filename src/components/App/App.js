@@ -1,21 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+'use strict';
 
-class App extends Component {
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+
+import Landing from '../../../landing';
+import Dashboard from '../../../dashboard';
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+
+<Fragment>
+  <BrowserRouter>
+    <Fragment>
+      <nav>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+        <li><Link to='/Dashboard'>Dashboard</Link></li>
+              </ul>
+            </nav>
+  <div>
+    <Route exact path='/' component={Landing} />
+              <Route exact path='/Dashboard' component={Dashboard} />
+            </div>
+</Fragment>
+        </BrowserRouter>
+      </Fragment>
     );
   }
 }
 
-export default App;
+
