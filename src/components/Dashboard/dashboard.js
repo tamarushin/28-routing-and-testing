@@ -1,11 +1,9 @@
-'use strict';
-
 import React, { Component, Fragment } from 'react';
 import uuidv1 from 'uuid/v1';
 
-import NoteCreateForm from '../../../note-create-form';
-import NoteList from '../../../note-list';
-import NoteItem from '../../../note-item';
+import NoteCreateForm from '../Note-Create-Form/note-create-form';
+import NoteList from '../Note-List/note-list';
+// import NoteItem from '../Note-Item/note-item';
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -24,12 +22,12 @@ export default class Dashboard extends Component {
 
   addNote(note) {
     note.id = uuidv1(),
-      note.editing = false,
-      note.completed = false,
-      note.title = this.state.title,
-      note.content = this.state.content,
+    note.editing = false,
+    note.completed = false,
+    note.title = this.state.title,
+    note.content = this.state.content,
 
-      console.log(note);
+    console.log(note);
 
     this.setState({
       notes: [...this.state.notes, note],
@@ -81,5 +79,6 @@ export default class Dashboard extends Component {
           removeNote={this.removeNote} />
       </Fragment>
     );
+
   }
 }
