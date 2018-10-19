@@ -1,54 +1,26 @@
-'use strict';
-
-import React, { Component } from 'react';
-
-export default class NoteCreateForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-      content: '',
-    };
-
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.handleAddNotes(this.state);
-    //resets the form to empty
-    this.setState({
-      title: '',
-      content: '',
-    });
-  }
-
-  handleChange(event) {
-    let { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  }
+import React from 'react';
+export default class NoteCreateForm extends React.Component {
 
   render() {
+    
     return (
-      <form onSubmit={ onComplete }>
+      <form className='note_input_form' onSubmit={this.props.onComplete}>
+        <div className='input_area'>
           <input
             type='text'
-            name='title'
             placeholder='title'
-            value={ this.state.title }
-            onChange={ this.handleChange }/>
-          <input
+            onChange={this.props.handleTitleChange}
+          />
+          <textarea
             type='text'
-            name='content'
-            placeholder='your note'
-            value={ this.state.content }
-            onChange={ this.handleChange }/>
-        
-        <button className='submit_btn' type='submit'> Make Music, Make Notes! </button>
+            cols='20'
+            rows='20'
+            placeholder='note'
+            onChange={this.props.handleContentChange}
+          />
+          <button type='submit'>Make Some Music!</button>
+        </div>
       </form>
     );
   }
-};
-
-export default NoteCreateFrom;
+}

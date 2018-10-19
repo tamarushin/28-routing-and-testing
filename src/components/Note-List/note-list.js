@@ -1,20 +1,27 @@
-'use strict';
+import React from 'react';
 
-import React, { Component,} from 'react';
+import NoteItem from '../Note-Item/note-item';
 
-export default class NoteItem extends Component {
-  constructor(props) {
-    super(props);
-  }
+
+export default class NoteList extends React.Component {
+
   render() {
     return (
-      this.props.note.map(note => {
-        <li key={note.id}>
-          <h3>{note.title}</h3>
-          <p>{note.content}</p>
-          <button id={note.id} onClick={this.props.removeNote}>Delete</button>
-        </li>
-      })
-    )
+      <div>
+      <ul>
+        {
+          this.props.notes.map((note) => {
+            <li key={note.id}>
+              <NoteItem 
+                note={note}
+                handleRemoveNote={this.props.removeNote}
+              />
+
+            </li>;
+          })
+        }
+      </ul>
+      </div>
+    );
   }
 }

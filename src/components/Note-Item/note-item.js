@@ -1,21 +1,18 @@
-'use strict';
-
 import React, { Component } from 'react';
 
 export default class NoteItem extends Component {
-  constructor (props) {
-    super (props);
-  }
+
   render() {
     return (
-      this.props.note.map(note => {
-        <li key={note.id}>
-        <h3>{note.title}</h3>
-        <p>{note.content}</p>
-        <button id={note.id} onClick={this.props.removeNote}>Delete</button>
-        </li>
-      })
-    )
+      <div>
+        
+        <h3>{this.props.note.title}</h3>
+        <p>{this.props.note.content}</p>
+        <button id={this.props.note.id} onClick={this.props.removeNote}>Delete</button>
+        
+      </div >
+      
+    );
   }
 }
 
