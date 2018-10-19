@@ -21,10 +21,10 @@ export default class Dashboard extends Component {
 
   addNote(note) {
     note.id = uuidv1(),
-      note.editing = false,
-      note.completed = false,
-      note.title = this.state.title,
-      note.content = this.state.content,
+    note.editing = false,
+    note.completed = false,
+    note.title = this.state.title,
+    note.content = this.state.content,
 
       this.setState({
         notes: [...this.state.notes, note],

@@ -2,7 +2,6 @@ import React from 'react';
 export default class NoteCreateForm extends React.Component {
 
   render() {
-    
     return (
       <form className='note_input_form' onSubmit={this.props.onComplete}>
         <div className='input_area'>
