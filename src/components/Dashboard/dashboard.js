@@ -26,9 +26,9 @@ export default class Dashboard extends Component {
     note.title = this.state.title,
     note.content = this.state.content,
 
-      this.setState({
-        notes: [...this.state.notes, note],
-      });
+    this.setState({
+      notes: [...this.state.notes, note],
+    });
   }
 
   handleContentChange(event) {
