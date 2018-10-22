@@ -1,9 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import uuidv1 from 'uuid/v1';
 
-import NoteCreateForm from '../Note-Create-Form/note-create-form';
-import NoteList from '../Note-List/note-list';
-// import NoteItem from '../Note-Item/note-item';
+import NoteCreateForm from '../Note-Create-Form/note-create-form.js';
+import NoteList from '../Note-List/note-list.js';
 
 export default class Dashboard extends Component {
   constructor(props) {
@@ -27,8 +26,6 @@ export default class Dashboard extends Component {
     note.title = this.state.title,
     note.content = this.state.content,
 
-    console.log(note);
-
     this.setState({
       notes: [...this.state.notes, note],
     });
@@ -43,7 +40,6 @@ export default class Dashboard extends Component {
   }
 
   removeNote(e) {
-    console.log('remove note', this.state.notes);
     let filteredNotes = this.state.notes.filter(note => {
       if (e.target.id !== note.id) {
         return note;
@@ -52,12 +48,11 @@ export default class Dashboard extends Component {
     this.setState({
       notes: filteredNotes,
     });
-    console.log(filteredNotes, 'filtered');
-    console.log(e.target.id, 'id');
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log('I am being submitted');
     this.addNote(this.state);
     this.setState({
       title: '',
@@ -65,6 +60,7 @@ export default class Dashboard extends Component {
     });
   }
 
+  //rendering components
   render() {
     console.log(this.state, 'state');
     return (
