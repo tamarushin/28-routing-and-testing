@@ -1,27 +1,27 @@
-body {
-  background-color: lightcoral;
-  height:100%;
-  width:100%;
-  margin:0;
-  padding:0;
- 
-}
-
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
   max-width: 100%;
 }
 
+body {
+  background-color: lightcoral;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 h1 {
   color: green;
   text-align: center;
-  font-size: 30px;
-  font-family: fantasy
-};
+  font-size: 2em;
+  font-family: fantasy;
+}
 
 p {
-  color: hotpink
+  color: darkSlateGray;
+  padding: 1em
+  
 }
 
 button {
@@ -41,26 +41,30 @@ button:hover {
 }
 
 nav {
-  font-family: fantasy
+  font-family: fantasy;
 }
 
- textarea {
-    -webkit-appearance: textarea;
-    background-color: lightblue;
-    -webkit-rtl-ordering: logical;
-    flex-direction: column;
-    resize: auto;
-    cursor: pointer;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-    border-width: 8px;
-    border-style: solid;
-    border-color:  rgb(136, 45, 45);
-    border-image: initial;
-    padding: 2px;
-    margin: 20px;
-    
+form {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  -webkit-appearance: textarea;
+  background-color: lightblue;
+  -webkit-rtl-ordering: logical;
+  flex-direction: column;
+  resize: auto;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  border-width: 8px;
+  border-style: solid;
+  border-color:  rgb(136, 45, 45);
+  border-image: initial;
+  padding: 2px;
+  margin: 20px;
 }
 
 input {
@@ -75,3 +79,6 @@ input {
   box-align: center;
 }
 
+li {
+ padding: 1em
+}
